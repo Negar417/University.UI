@@ -1,0 +1,66 @@
+<div class="form-group"  class="card-box">
+    <!-- [formGroup]="courseForm" -->
+    <form [formGroup]="courseForm" class="form-group" (ngSubmit)="SaveCourse()" >
+        <div class="form-group">
+            <div  class="row" style=" text-align: center; display: block;">
+                <h2>
+                    add/edit
+                </h2>
+            </div>
+            <div class="row">
+                <div class="offset-lg-3 col-lg-6">
+                    <div class="form-group">
+                        <label>کد درس:</label>
+                        <input type="text" id="txtCode" formControlName="id" class="form-control">
+                     
+                    </div>
+                </div>
+            </div>
+    
+            <div class="row">
+                <div class="offset-lg-3 col-lg-6">
+                    <div class="from-group">
+                        <label>نام درس :</label>
+                        <input type="text" id="txtcourseName" formControlName="courseName" class="form-control">
+                        <span *ngIf="courseName && courseName.invalid && courseName.touched" class="error">please enter name course</span>
+                    </div>
+                </div>
+            </div>
+    
+            <div class="row">
+                <div class="offset-lg-3 col-lg-6">
+                    <div class="from-group">
+                        <label>نام استاد:</label>
+                            <input type="text" formControlName="teacherName" id="txtTeacherName" class="form-control">
+                            <span *ngIf="teacherName && teacherName.invalid && teacherName.touched" class="error">please enter  teacher Name</span>
+                    </div>
+                </div>
+            </div>
+    
+            <!-- <div class="row">
+                <div class="offset-lg-3 col-lg-6">
+                    <div class="from-group">
+                        <label for="txtCode">
+                            <input type="text" id="txtcode" class="form-control">
+                        </label>
+                    </div>
+                </div>
+            </div> -->
+            <br>
+            <div class="row">
+                <div class="offset-lg-3 col-lg-6">
+                    <div class="from-group">
+                        <button type="submit" class="btn btn-primary btn-lg btn-block" >Submit Application</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3">
+                <br>
+                  <span class={{messageclass}}>{{message}}</span>
+               
+            </div>
+      
+        </div>
+    </form>
+    
+</div>
